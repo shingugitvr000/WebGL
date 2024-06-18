@@ -5,8 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | TMProEffect2</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="TemplateData/style    <link rel="manifest" href="manifest.webmanifest">
   </head>
   <body>
     <div id="unity-container">
@@ -86,6 +85,13 @@
 
       loadingBar.style.display = "block";
 
+      function focusInputField() {
+            var inputElement = document.getElementById('yourInputFieldID');
+            if(inputElement) {
+                inputElement.focus();
+            }
+        }
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -99,5 +105,8 @@
       };
       document.body.appendChild(script);
     </script>
+
+    <input type="text" id="yourInputFieldID" style="position: absolute; top: 10px; left: 10px;" onfocus="focusInputField()">
+
   </body>
 </html>
